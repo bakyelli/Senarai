@@ -30,14 +30,15 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 100000;
+    return 100;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     
-    cell.textLabel.text = @"hello";
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%i",indexPath.row];
     return cell;
 }
 @end
