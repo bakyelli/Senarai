@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "DetailViewController.h"
 
 @interface ViewController ()
 
@@ -40,5 +41,17 @@
     
     cell.textLabel.text = [NSString stringWithFormat:@"%i",indexPath.row];
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+       
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        
+        DetailViewController *dvc = segue.destinationViewController;
+        
+        dvc.contentString = [NSString stringWithFormat:@"%i",indexPath.row];
+    }
 }
 @end
