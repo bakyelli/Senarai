@@ -21,6 +21,7 @@
 		D863D4EE17FDB9DE007A601E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863D4D017FDB9DD007A601E /* UIKit.framework */; };
 		D863D4F617FDB9DE007A601E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D863D4F417FDB9DE007A601E /* InfoPlist.strings */; };
 		D863D4F817FDB9DE007A601E /* SenaraiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D863D4F717FDB9DE007A601E /* SenaraiTests.m */; };
+		D863D50317FDED1D007A601E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D863D50217FDED1D007A601E /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		D863D4F317FDB9DE007A601E /* SenaraiTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SenaraiTests-Info.plist"; sourceTree = "<group>"; };
 		D863D4F517FDB9DE007A601E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D863D4F717FDB9DE007A601E /* SenaraiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenaraiTests.m; sourceTree = "<group>"; };
+		D863D50117FDED1D007A601E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D863D50217FDED1D007A601E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +118,8 @@
 				D863D4DB17FDB9DD007A601E /* AppDelegate.h */,
 				D863D4DC17FDB9DD007A601E /* AppDelegate.m */,
 				D863D4DE17FDB9DD007A601E /* Main.storyboard */,
+				D863D50117FDED1D007A601E /* DetailViewController.h */,
+				D863D50217FDED1D007A601E /* DetailViewController.m */,
 				D863D4E117FDB9DD007A601E /* ViewController.h */,
 				D863D4E217FDB9DD007A601E /* ViewController.m */,
 				D863D4E417FDB9DD007A601E /* Images.xcassets */,
@@ -252,6 +257,7 @@
 				D863D4E317FDB9DD007A601E /* ViewController.m in Sources */,
 				D863D4DD17FDB9DD007A601E /* AppDelegate.m in Sources */,
 				D863D4D917FDB9DD007A601E /* main.m in Sources */,
+				D863D50317FDED1D007A601E /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
