@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
-        <!--View Controller - Root View Controller-->
+        <!--View Controller - Items-->
         <scene sceneID="57u-7N-g6M">
             <objects>
                 <tableViewController id="KT6-aa-wBp" customClass="ViewController" sceneMemberID="viewController">
@@ -30,21 +30,21 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kDF-qt-98E" kind="push" id="1Wy-P6-034"/>
+                                    <segue destination="kDF-qt-98E" kind="push" identifier="showDetail" id="1Wy-P6-034"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="A4H-R2-LK6"/>
+                    <navigationItem key="navigationItem" title="Items" id="A4H-R2-LK6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Yh-p8-Lv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1137" y="70"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Cbu-Zx-0ss">
             <objects>
-                <viewController id="kDF-qt-98E" sceneMemberID="viewController">
+                <viewController id="kDF-qt-98E" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WRy-IV-MMO"/>
                         <viewControllerLayoutGuide type="bottom" id="FEQ-8p-pJG"/>
@@ -53,7 +53,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPB-W0-bSF">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DPB-W0-bSF">
                                 <rect key="frame" x="0.0" y="247" width="320" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="100"/>
@@ -64,6 +64,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="a7i-fN-Ltd"/>
+                    <connections>
+                        <outlet property="bigLabel" destination="DPB-W0-bSF" id="WHC-Db-nYD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ore-1c-4pP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
