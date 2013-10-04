@@ -22,6 +22,9 @@
 		D863D4F617FDB9DE007A601E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D863D4F417FDB9DE007A601E /* InfoPlist.strings */; };
 		D863D4F817FDB9DE007A601E /* SenaraiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D863D4F717FDB9DE007A601E /* SenaraiTests.m */; };
 		D863D50317FDED1D007A601E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D863D50217FDED1D007A601E /* DetailViewController.m */; };
+		D8F99D3417FF0C0D00F1C8C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F99D3317FF0C0D00F1C8C9 /* CoreData.framework */; };
+		D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8F99D3517FF0CCA00F1C8C9 /* Models.xcdatamodeld */; };
+		D8F99D3A17FF0D6100F1C8C9 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F99D3917FF0D6100F1C8C9 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,10 @@
 		D863D4F717FDB9DE007A601E /* SenaraiTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenaraiTests.m; sourceTree = "<group>"; };
 		D863D50117FDED1D007A601E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		D863D50217FDED1D007A601E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D8F99D3317FF0C0D00F1C8C9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D8F99D3617FF0CCA00F1C8C9 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
+		D8F99D3817FF0D6100F1C8C9 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		D8F99D3917FF0D6100F1C8C9 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F99D3417FF0C0D00F1C8C9 /* CoreData.framework in Frameworks */,
 				D863D4CF17FDB9DD007A601E /* CoreGraphics.framework in Frameworks */,
 				D863D4D117FDB9DD007A601E /* UIKit.framework in Frameworks */,
 				D863D4CD17FDB9DD007A601E /* Foundation.framework in Frameworks */,
@@ -104,6 +112,7 @@
 		D863D4CB17FDB9DD007A601E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D8F99D3317FF0C0D00F1C8C9 /* CoreData.framework */,
 				D863D4CC17FDB9DD007A601E /* Foundation.framework */,
 				D863D4CE17FDB9DD007A601E /* CoreGraphics.framework */,
 				D863D4D017FDB9DD007A601E /* UIKit.framework */,
@@ -120,6 +129,9 @@
 				D863D4DE17FDB9DD007A601E /* Main.storyboard */,
 				D863D50117FDED1D007A601E /* DetailViewController.h */,
 				D863D50217FDED1D007A601E /* DetailViewController.m */,
+				D8F99D3517FF0CCA00F1C8C9 /* Models.xcdatamodeld */,
+				D8F99D3817FF0D6100F1C8C9 /* Item.h */,
+				D8F99D3917FF0D6100F1C8C9 /* Item.m */,
 				D863D4E117FDB9DD007A601E /* ViewController.h */,
 				D863D4E217FDB9DD007A601E /* ViewController.m */,
 				D863D4E417FDB9DD007A601E /* Images.xcassets */,
@@ -254,9 +266,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F99D3A17FF0D6100F1C8C9 /* Item.m in Sources */,
 				D863D4E317FDB9DD007A601E /* ViewController.m in Sources */,
 				D863D4DD17FDB9DD007A601E /* AppDelegate.m in Sources */,
 				D863D4D917FDB9DD007A601E /* main.m in Sources */,
+				D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */,
 				D863D50317FDED1D007A601E /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -466,6 +480,7 @@
 				D863D4FD17FDB9DE007A601E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D863D4FE17FDB9DE007A601E /* Build configuration list for PBXNativeTarget "SenaraiTests" */ = {
 			isa = XCConfigurationList;
@@ -474,8 +489,22 @@
 				D863D50017FDB9DE007A601E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D8F99D3517FF0CCA00F1C8C9 /* Models.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D8F99D3617FF0CCA00F1C8C9 /* Models.xcdatamodel */,
+			);
+			currentVersion = D8F99D3617FF0CCA00F1C8C9 /* Models.xcdatamodel */;
+			path = Models.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D863D4C117FDB9DD007A601E /* Project object */;
 }
