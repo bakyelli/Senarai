@@ -26,5 +26,6 @@
 
 - (Item *)newItem;
 - (void) insertItem:(Item *)insertItem;
+- (void) deleteItemAtIndexPath: (NSIndexPath *)indexPath;
 
 @end

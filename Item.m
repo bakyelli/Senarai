@@ -2,7 +2,7 @@
 //  Item.m
 //  Senarai
 //
-//  Created by Joe Burgess on 10/4/13.
+//  Created by Joe Burgess on 10/7/13.
 //  Copyright (c) 2013 Joe Burgess. All rights reserved.
 //
 
@@ -11,8 +11,9 @@
 
 @implementation Item
 
+@dynamic completed;
 @dynamic content;
 @dynamic timeStamp;
-@dynamic completed;
+@dynamic order;
 
 @end

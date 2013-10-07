@@ -34,7 +34,9 @@
                                   target:self
                                   action:@selector(addButtonPressed:)];
     
+    
     self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     [ItemsDataStore sharedStore].tableView = self.tableView;
     [ItemsDataStore sharedStore].fetchedResultsController;
@@ -45,11 +47,12 @@
     ItemsDataStore *myStore = [ItemsDataStore sharedStore];
    
     Item *newItem = [myStore newItem];
-    newItem.content = @"Hello";
+    newItem.content = @"Helloasdf";
     
     [myStore insertItem:newItem];
     
 }
+
 
 - (void) viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -68,6 +71,25 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return [[ItemsDataStore sharedStore].fetchedResultsController.sections[section] numberOfObjects];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return  YES;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath {
+    NSLog(@"asdf");
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [[ItemsDataStore sharedStore] deleteItemAtIndexPath:indexPath];
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

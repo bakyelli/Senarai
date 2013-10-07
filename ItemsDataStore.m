@@ -39,9 +39,10 @@
     
     [fetchRequest setFetchBatchSize:20];
     
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"timeStamp" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:NO];
     
     [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
     
     NSFetchedResultsController *myFetchedResultsController =
     [[NSFetchedResultsController alloc]
@@ -64,8 +65,12 @@
 }
 
 - (void) controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {
-    
+   
+    if (type == NSFetchedResultsChangeInsert) {
     [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (type == NSFetchedResultsChangeDelete) {
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    } else if (type==NSFetchedResultsChangeMove)
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
@@ -78,6 +83,7 @@
     Item *itemToReturn = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[self managedObjectContext]];
     
     itemToReturn.timeStamp = [NSDate date];
+    itemToReturn.order = [NSNumber numberWithInt:(self.fetchedResultsController.fetchedObjects.count+1)];
     
     return itemToReturn;
 }
@@ -85,6 +91,14 @@
 - (void)insertItem:(Item *)insertItem {
     [self.managedObjectContext insertObject:insertItem];
     [self.managedObjectContext save:nil];
+}
+
+- (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSManagedObjectContext *context = self.managedObjectContext;
+    
+    Item *itemToBeDeleted = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    [context deleteObject:itemToBeDeleted];
+    [context save:nil];
 }
 
 #pragma mark - Core Data stack
