@@ -8,6 +8,24 @@
 
 #import "myTableCell.h"
 
+@interface myTableCell ()
+
+
+
+- (IBAction)DisableStepper:(id)sender;
+- (IBAction)stepperChanged:(id)sender;
+
+@end
+
 @implementation myTableCell
+
+- (IBAction)DisableStepper:(id)sender {
+}
+
+- (IBAction)stepperChanged:(id)sender {
+    
+    NSLog(@"Changed Stepper:%f",self.myStepper.value);
+}
+
 
 @end

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface myTableCell : NSObject
-
+@interface myTableCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIStepper *myStepper;
+@property (weak, nonatomic) IBOutlet UILabel *myLabel;
 @end
