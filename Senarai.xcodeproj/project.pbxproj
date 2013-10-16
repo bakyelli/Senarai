@@ -93,6 +93,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8160488180F020100BACB7F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D8F99DD018034DB200F1C8C9 /* Item.h */,
+				D8F99DD118034DB200F1C8C9 /* Item.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		D863D4C017FDB9DD007A601E = {
 			isa = PBXGroup;
 			children = (
@@ -127,8 +136,7 @@
 		D863D4D217FDB9DD007A601E /* Senarai */ = {
 			isa = PBXGroup;
 			children = (
-				D8F99DD018034DB200F1C8C9 /* Item.h */,
-				D8F99DD118034DB200F1C8C9 /* Item.m */,
+				D8160488180F020100BACB7F /* Models */,
 				D8F99DCC1802F33100F1C8C9 /* ItemsDataStore.h */,
 				D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */,
 				D863D4DB17FDB9DD007A601E /* AppDelegate.h */,
