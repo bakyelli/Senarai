@@ -39,7 +39,6 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     [ItemsDataStore sharedStore].tableView = self.tableView;
-    [ItemsDataStore sharedStore].fetchedResultsController;
     NSLog(@"I Loaded");
 }
 
@@ -70,7 +69,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[ItemsDataStore sharedStore].fetchedResultsController.sections[section] numberOfObjects];
+    return [[ItemsDataStore sharedStore] numberOfItemsForSection:section];
+    
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -96,7 +96,11 @@
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     
-    Item *object = [[[ItemsDataStore sharedStore] fetchedResultsController] objectAtIndexPath:indexPath];
+
+    
+    Item *object = [[ItemsDataStore sharedStore] itemAtIndexPath:indexPath];
+    
+    
                     
     cell.textLabel.text = object.content;
     return cell;

@@ -27,5 +27,7 @@
 - (Item *)newItem;
 - (void) insertItem:(Item *)insertItem;
 - (void) deleteItemAtIndexPath: (NSIndexPath *)indexPath;
+- (NSInteger) numberOfItemsForSection:(NSInteger)section;
+- (Item *)itemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end

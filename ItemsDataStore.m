@@ -103,6 +103,13 @@
     [context save:nil];
 }
 
+- (NSInteger) numberOfItemsForSection:(NSInteger)section {
+    return [self.fetchedResultsController.sections[section] numberOfObjects];
+}
+
+- (Item *)itemAtIndexPath:(NSIndexPath *)indexPath {
+    return [self.fetchedResultsController objectAtIndexPath:indexPath];
+}
 #pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
