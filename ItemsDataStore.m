@@ -70,7 +70,9 @@
     [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (type == NSFetchedResultsChangeDelete) {
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (type==NSFetchedResultsChangeMove)
+    } else if (type==NSFetchedResultsChangeMove){
+        
+    }
 }
 
 - (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
