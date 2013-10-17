@@ -15,6 +15,7 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 @synthesize fetchedResultsController = _fetchedResultsController;
+@synthesize tagsFetchedResultsController = _tagsFetchedResultsController;
 
 + (ItemsDataStore *)sharedStore {
     static ItemsDataStore *sharedItemsDataStore = nil;
@@ -23,6 +24,41 @@
         sharedItemsDataStore = [[self alloc] init];
     });
     return sharedItemsDataStore;
+}
+
+#pragma mark - Tags NSFetchedResultsController Stack
+
+- (NSFetchedResultsController *)tagsFetchedResultsController {
+    if (_tagsFetchedResultsController != nil) {
+        return _tagsFetchedResultsController;
+    }
+ 
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Tag" inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
+    
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"content" ascending:NO];
+    
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    
+    NSFetchedResultsController *myFetchedResultsController =
+    [[NSFetchedResultsController alloc]
+     initWithFetchRequest:fetchRequest
+     managedObjectContext:self.managedObjectContext
+     sectionNameKeyPath:nil
+     cacheName:@"Tag"];
+    
+    _tagsFetchedResultsController = myFetchedResultsController;
+    
+    [_tagsFetchedResultsController performFetch:nil];
+    
+    return _tagsFetchedResultsController;
+    
 }
 
 #pragma mark - NSFetchedResultsController Stack

@@ -10,6 +10,7 @@
 #import "DetailViewController.h"
 #import "Item.h"
 #import "ItemsDataStore.h"
+#import "Tag.h"
 
 @interface ViewController ()
 
@@ -39,6 +40,14 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     [ItemsDataStore sharedStore].tableView = self.tableView;
+    Tag *newTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:[ItemsDataStore sharedStore].managedObjectContext];
+    
+    newTag.content = @"myTag!";
+   
+    NSArray *items = [ItemsDataStore sharedStore].fetchedResultsController.fetchedObjects;
+    Item *firstItem = [items firstObject];
+    firstItem.tag = newTag;
+    
     NSLog(@"I Loaded");
 }
 
@@ -103,6 +112,7 @@
     
                     
     cell.textLabel.text = object.content;
+    cell.detailTextLabel.text = object.tag.content;
     return cell;
 }
 

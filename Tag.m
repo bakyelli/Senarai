@@ -1,20 +1,18 @@
 //
-//  Item.m
+//  Tag.m
 //  Senarai
 //
 //  Created by Joe Burgess on 10/16/13.
 //  Copyright (c) 2013 Joe Burgess. All rights reserved.
 //
 
+#import "Tag.h"
 #import "Item.h"
 
 
-@implementation Item
+@implementation Tag
 
-@dynamic completed;
 @dynamic content;
-@dynamic order;
-@dynamic timeStamp;
-@dynamic tag;
+@dynamic items;
 
 @end

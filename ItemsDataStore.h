@@ -20,6 +20,8 @@
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
+
+@property (strong, nonatomic) NSFetchedResultsController *tagsFetchedResultsController;
 @property (strong, nonatomic) UITableView *tableView;
 
 + (ItemsDataStore *)sharedStore;

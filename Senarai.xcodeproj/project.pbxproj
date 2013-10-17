@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D816048B180F2C3100BACB7F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D816048A180F2C3100BACB7F /* Item.m */; };
+		D816048E180F2C3100BACB7F /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = D816048D180F2C3100BACB7F /* Tag.m */; };
 		D863D4CD17FDB9DD007A601E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863D4CC17FDB9DD007A601E /* Foundation.framework */; };
 		D863D4CF17FDB9DD007A601E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863D4CE17FDB9DD007A601E /* CoreGraphics.framework */; };
 		D863D4D117FDB9DD007A601E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863D4D017FDB9DD007A601E /* UIKit.framework */; };
@@ -25,7 +27,6 @@
 		D8F99D3417FF0C0D00F1C8C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F99D3317FF0C0D00F1C8C9 /* CoreData.framework */; };
 		D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8F99D3517FF0CCA00F1C8C9 /* Models.xcdatamodeld */; };
 		D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */; };
-		D8F99DD218034DB200F1C8C9 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F99DD118034DB200F1C8C9 /* Item.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8160489180F2C3100BACB7F /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		D816048A180F2C3100BACB7F /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		D816048C180F2C3100BACB7F /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		D816048D180F2C3100BACB7F /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		D863D4C917FDB9DD007A601E /* Senarai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Senarai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D863D4CC17FDB9DD007A601E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D863D4CE17FDB9DD007A601E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -64,8 +69,6 @@
 		D8F99D3617FF0CCA00F1C8C9 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
 		D8F99DCC1802F33100F1C8C9 /* ItemsDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDataStore.h; path = ../ItemsDataStore.h; sourceTree = "<group>"; };
 		D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsDataStore.m; path = ../ItemsDataStore.m; sourceTree = "<group>"; };
-		D8F99DD018034DB200F1C8C9 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Item.h; sourceTree = "<group>"; };
-		D8F99DD118034DB200F1C8C9 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = ../Item.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +99,6 @@
 		D8160488180F020100BACB7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D8F99DD018034DB200F1C8C9 /* Item.h */,
-				D8F99DD118034DB200F1C8C9 /* Item.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -105,6 +106,10 @@
 		D863D4C017FDB9DD007A601E = {
 			isa = PBXGroup;
 			children = (
+				D816048C180F2C3100BACB7F /* Tag.h */,
+				D816048D180F2C3100BACB7F /* Tag.m */,
+				D8160489180F2C3100BACB7F /* Item.h */,
+				D816048A180F2C3100BACB7F /* Item.m */,
 				D863D4D217FDB9DD007A601E /* Senarai */,
 				D863D4F117FDB9DE007A601E /* SenaraiTests */,
 				D863D4CB17FDB9DD007A601E /* Frameworks */,
@@ -283,8 +288,9 @@
 				D863D4DD17FDB9DD007A601E /* AppDelegate.m in Sources */,
 				D863D4D917FDB9DD007A601E /* main.m in Sources */,
 				D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */,
+				D816048E180F2C3100BACB7F /* Tag.m in Sources */,
 				D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */,
-				D8F99DD218034DB200F1C8C9 /* Item.m in Sources */,
+				D816048B180F2C3100BACB7F /* Item.m in Sources */,
 				D863D50317FDED1D007A601E /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
