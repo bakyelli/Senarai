@@ -9,7 +9,7 @@
 #import "ListOfTagsViewController.h"
 #import "ItemsDataStore.h"
 @interface ListOfTagsViewController ()
-
+@property (strong, nonatomic) UITableViewCell *cellWithCheckmark;
 @end
 
 @implementation ListOfTagsViewController
@@ -36,10 +36,7 @@
     self.navigationItem.rightBarButtonItem = addButton;
 
     self.tableView.delegate = self;
-    [self tagsFetchedResultsController];
 }
-
-
 
 - (void) addButtonPressed:(id)sender {
     
@@ -79,12 +76,10 @@
     UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
     [selectedCell setAccessoryType:UITableViewCellAccessoryCheckmark];
-    
-    
-    
+    [self.cellWithCheckmark setAccessoryType:UITableViewCellAccessoryNone];
+    self.cellWithCheckmark = selectedCell;
     
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -170,6 +165,7 @@
     
     if(object == self.item.tag)
     {
+        self.cellWithCheckmark = cell;
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     
@@ -204,6 +200,7 @@
     Tag *itemToBeDeleted = [self.tagsFetchedResultsController objectAtIndexPath:indexPath];
     [context deleteObject:itemToBeDeleted];
     [context save:nil];
+
 }
 
 

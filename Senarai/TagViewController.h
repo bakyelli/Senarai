@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Item.h"
-@interface TagViewController : UITableViewController
+@interface TagViewController : UITableViewController 
 @property (weak, nonatomic) IBOutlet UITableViewCell *myCell;
 @property (strong,nonatomic) NSString *tagName;
 @property (strong,nonatomic) Item *item;

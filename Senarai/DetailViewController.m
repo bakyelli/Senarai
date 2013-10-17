@@ -9,14 +9,15 @@
 #import "DetailViewController.h"
 #import "TagViewController.h"
 #import "Tag.h"
+
 @implementation DetailViewController
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     bigLabel.text = self.detailItem.content;
     self.navigationItem.title = @"Item Detail";
-   
-//    
+    
+//
 //    UITableViewController *tbl = (UITableViewController *)[self.childViewControllers lastObject];
 //    UITableView *tableView = (UITableView *)tbl.view;
 //    
@@ -59,4 +60,7 @@
     
     }
 }
+
+
+
 @end

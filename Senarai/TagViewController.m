@@ -8,6 +8,8 @@
 
 #import "TagViewController.h"
 #import "ListOfTagsViewController.h"
+#import "ItemsDataStore.h"
+
 @interface TagViewController ()
 
 @end
@@ -26,22 +28,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if(self.tagName == nil)
-    {
-        [self.myCell.detailTextLabel setText:@"[No Tags]"];
-
-    }
-    else
-    {
-        [self.myCell.detailTextLabel setText:self.tagName];
-
-    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"what the");
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+    if(self.tagName == nil)
+    {
+        [self.myCell.detailTextLabel setText:@"[No Tags]"];
+        
+    }
+    else
+    {
+        [self.myCell.detailTextLabel setText:self.item.tag.content];
+        
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,16 +61,21 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-if ([[segue identifier] isEqualToString:@"listTagsSegue"]) {
-    
-    ListOfTagsViewController *listVC = segue.destinationViewController;
-    listVC.item = self.item;
-   // TagViewController *dvc = segue.destinationViewController;
-   // dvc.tagName = self.detailItem.tag.content;
-    
-    
+    if ([[segue identifier] isEqualToString:@"listTagsSegue"]) {
+        
+        ListOfTagsViewController *listVC = segue.destinationViewController;
+        listVC.item = self.item;
+       // TagViewController *dvc = segue.destinationViewController;
+       // dvc.tagName = self.detailItem.tag.content;
+        
+    }
 }
-}
+
+
+//- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+//    NSLog(@"cahnged content in tagview");
+//    [self.tableView reloadData];
+//}
 //#pragma mark - Table view data source
 //
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

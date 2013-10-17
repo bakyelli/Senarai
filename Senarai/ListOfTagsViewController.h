@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "Item.h"
-@interface ListOfTagsViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,NSFetchedResultsControllerDelegate,UIAlertViewDelegate>
 
-@property (strong,nonatomic) NSFetchedResultsController *tagsFetchedResultsController;
-@property (strong,nonatomic) Item *item;
+@interface ListOfTagsViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource,NSFetchedResultsControllerDelegate,UIAlertViewDelegate>
+@property (strong, nonatomic) NSFetchedResultsController *tagsFetchedResultsController;
+@property (strong, nonatomic) Item *item;
 
 - (void)deleteItemAtIndexPath:(NSIndexPath *)indexPath;
 @end

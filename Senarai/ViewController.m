@@ -28,8 +28,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.tableView.dataSource = self;
     
-    
-    
+
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
                 initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
                                   target:self
@@ -62,10 +61,9 @@
 }
 
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,12 +103,8 @@
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     
-
-    
     Item *object = [[ItemsDataStore sharedStore] itemAtIndexPath:indexPath];
     
-    
-                    
     cell.textLabel.text = object.content;
     cell.detailTextLabel.text = object.tag.content;
     return cell;
@@ -126,7 +120,6 @@
         dvc.detailItem = selectedItem;
     }
 }
-
 
 
 @end

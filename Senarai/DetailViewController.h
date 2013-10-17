@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "Item.h"
+#import "ItemsDataStore.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController 
 {
     __weak IBOutlet UILabel *bigLabel;
 }
 
 @property (nonatomic, strong) NSString *contentString;
 @property (nonatomic, strong) Item *detailItem; 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
