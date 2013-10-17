@@ -1,18 +1,18 @@
 //
-//  TagTableViewController.m
+//  TagViewController.m
 //  Senarai
 //
 //  Created by Basar Akyelli on 10/17/13.
 //  Copyright (c) 2013 Joe Burgess. All rights reserved.
 //
 
-#import "TagTableViewController.h"
-
-@interface TagTableViewController ()
+#import "TagViewController.h"
+#import "ListOfTagsViewController.h"
+@interface TagViewController ()
 
 @end
 
-@implementation TagTableViewController
+@implementation TagViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -26,6 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if(self.tagName == nil)
+    {
+        [self.myCell.detailTextLabel setText:@"[No Tags]"];
+
+    }
+    else
+    {
+        [self.myCell.detailTextLabel setText:self.tagName];
+
+    }
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -40,8 +50,19 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+if ([[segue identifier] isEqualToString:@"listTagsSegue"]) {
+    
+    ListOfTagsViewController *listVC = segue.destinationViewController;
+    listVC.item = self.item;
+   // TagViewController *dvc = segue.destinationViewController;
+   // dvc.tagName = self.detailItem.tag.content;
+    
+    
+}
+}
+//#pragma mark - Table view data source
+//
 //- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
 //#warning Potentially incomplete method implementation.
@@ -65,7 +86,7 @@
 //    
 //    return cell;
 //}
-
+//
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath

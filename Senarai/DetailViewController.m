@@ -7,7 +7,8 @@
 //
 
 #import "DetailViewController.h"
-
+#import "TagViewController.h"
+#import "Tag.h"
 @implementation DetailViewController
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -15,17 +16,18 @@
     bigLabel.text = self.detailItem.content;
     self.navigationItem.title = @"Item Detail";
    
-    //UITableViewCell *myTagCell = (UITableViewCell *)[self.tagTableView viewWithTag:1];
+//    
+//    UITableViewController *tbl = (UITableViewController *)[self.childViewControllers lastObject];
+//    UITableView *tableView = (UITableView *)tbl.view;
+//    
+//    
+//    NSLog(@"%i", [tableView numberOfRowsInSection:0]);
 //    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//    //UITableViewCell *myTagCell = [self.tagTableView cellForRowAtIndexPath:indexPath];
-//    //self.myCell.textLabel.text = @"HELLOOOO";
-//    
-//   // UITableViewCell *myCell = [self.tagTableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
-//    
-//    self.myCell.textLabel.text = @"HELLOO";
-//   // myTagCell.textLabel.text = @"HELLO WORLD";
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    cell.textLabel.text = @"JAMES AND BASAR RULE";
+//    //cell.detailTextLabel.text = @"HAHAH";
     
- //   self.tagTableView.delegate = self;
+
 }
 
 //-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -45,4 +47,16 @@
 //{
 //    NSLog(@"Prepare for Segue");
 //}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"tagSegue"]) {
+
+        TagViewController *dvc = segue.destinationViewController;
+        dvc.tagName = self.detailItem.tag.content;
+        dvc.item = self.detailItem;
+    
+    }
+}
 @end

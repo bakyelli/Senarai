@@ -27,7 +27,8 @@
 		D8F99D3417FF0C0D00F1C8C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F99D3317FF0C0D00F1C8C9 /* CoreData.framework */; };
 		D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8F99D3517FF0CCA00F1C8C9 /* Models.xcdatamodeld */; };
 		D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */; };
-		F1667D9F18106B8400DE0663 /* TagTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1667D9E18106B8400DE0663 /* TagTableViewController.m */; };
+		F12580A31810770F00962956 /* ListOfTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12580A21810770F00962956 /* ListOfTagsViewController.m */; };
+		F1667DA21810723000DE0663 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1667DA11810723000DE0663 /* TagViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,8 +71,10 @@
 		D8F99D3617FF0CCA00F1C8C9 /* Models.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Models.xcdatamodel; sourceTree = "<group>"; };
 		D8F99DCC1802F33100F1C8C9 /* ItemsDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDataStore.h; path = ../ItemsDataStore.h; sourceTree = "<group>"; };
 		D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsDataStore.m; path = ../ItemsDataStore.m; sourceTree = "<group>"; };
-		F1667D9D18106B8400DE0663 /* TagTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagTableViewController.h; sourceTree = "<group>"; };
-		F1667D9E18106B8400DE0663 /* TagTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagTableViewController.m; sourceTree = "<group>"; };
+		F12580A11810770F00962956 /* ListOfTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfTagsViewController.h; sourceTree = "<group>"; };
+		F12580A21810770F00962956 /* ListOfTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfTagsViewController.m; sourceTree = "<group>"; };
+		F1667DA01810723000DE0663 /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
+		F1667DA11810723000DE0663 /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +153,10 @@
 				D863D4DB17FDB9DD007A601E /* AppDelegate.h */,
 				D863D4DC17FDB9DD007A601E /* AppDelegate.m */,
 				D863D4DE17FDB9DD007A601E /* Main.storyboard */,
-				F1667D9D18106B8400DE0663 /* TagTableViewController.h */,
-				F1667D9E18106B8400DE0663 /* TagTableViewController.m */,
+				F12580A11810770F00962956 /* ListOfTagsViewController.h */,
+				F12580A21810770F00962956 /* ListOfTagsViewController.m */,
+				F1667DA01810723000DE0663 /* TagViewController.h */,
+				F1667DA11810723000DE0663 /* TagViewController.m */,
 				D863D50117FDED1D007A601E /* DetailViewController.h */,
 				D863D50217FDED1D007A601E /* DetailViewController.m */,
 				D8F99D3517FF0CCA00F1C8C9 /* Models.xcdatamodeld */,
@@ -292,9 +297,10 @@
 				D863D4E317FDB9DD007A601E /* ViewController.m in Sources */,
 				D863D4DD17FDB9DD007A601E /* AppDelegate.m in Sources */,
 				D863D4D917FDB9DD007A601E /* main.m in Sources */,
+				F1667DA21810723000DE0663 /* TagViewController.m in Sources */,
+				F12580A31810770F00962956 /* ListOfTagsViewController.m in Sources */,
 				D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */,
 				D816048E180F2C3100BACB7F /* Tag.m in Sources */,
-				F1667D9F18106B8400DE0663 /* TagTableViewController.m in Sources */,
 				D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */,
 				D816048B180F2C3100BACB7F /* Item.m in Sources */,
 				D863D50317FDED1D007A601E /* DetailViewController.m in Sources */,

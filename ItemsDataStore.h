@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "Tag.h"
 
 @class Item;
 
@@ -27,7 +28,9 @@
 + (ItemsDataStore *)sharedStore;
 
 - (Item *)newItem;
+- (Tag *)newTag;
 - (void) insertItem:(Item *)insertItem;
+- (void)insertTag:(Tag *)insertItem; 
 - (void) deleteItemAtIndexPath: (NSIndexPath *)indexPath;
 - (NSInteger) numberOfItemsForSection:(NSInteger)section;
 - (Item *)itemAtIndexPath:(NSIndexPath *)indexPath;
