@@ -40,13 +40,13 @@
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
     [ItemsDataStore sharedStore].tableView = self.tableView;
-    Tag *newTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:[ItemsDataStore sharedStore].managedObjectContext];
-    
-    newTag.content = @"myTag!";
-   
-    NSArray *items = [ItemsDataStore sharedStore].fetchedResultsController.fetchedObjects;
-    Item *firstItem = [items firstObject];
-    firstItem.tag = newTag;
+//    Tag *newTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:[ItemsDataStore sharedStore].managedObjectContext];
+//    
+//    newTag.content = @"myTag!";
+//   
+//    NSArray *items = [ItemsDataStore sharedStore].fetchedResultsController.fetchedObjects;
+//    Item *firstItem = [items firstObject];
+//    firstItem.tag = newTag;
     
     NSLog(@"I Loaded");
 }
@@ -121,10 +121,9 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
+        Item *selectedItem = [[ItemsDataStore sharedStore] itemAtIndexPath:indexPath];
         DetailViewController *dvc = segue.destinationViewController;
-        
-        dvc.contentString = [NSString stringWithFormat:@"%i",indexPath.row];
+        dvc.detailItem = selectedItem;
     }
 }
 
