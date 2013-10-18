@@ -9,7 +9,6 @@
 #import "ListOfTagsViewController.h"
 #import "ItemsDataStore.h"
 @interface ListOfTagsViewController ()
-@property (strong, nonatomic) UITableViewCell *cellWithCheckmark;
 @end
 
 @implementation ListOfTagsViewController
@@ -67,17 +66,41 @@
 {
     NSLog(@"Index Path: %i",indexPath.row);
     
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+
     Tag *tag = [[self.tagsFetchedResultsController fetchedObjects]objectAtIndex:indexPath.row];
+
+    //NSMutableSet *tagsSet = [self.item.tags mutableCopy];
+    
+    if(selectedCell.accessoryType == UITableViewCellAccessoryCheckmark)
+    {
+        //It was already checked. So need to uncheck.
+        
+        [selectedCell setAccessoryType:UITableViewCellAccessoryNone];
+        [self.item removeTagsObject:tag];
+        
+       // [tagsSet removeObject:tag];
+        
+        
+    }
+    else if(selectedCell.accessoryType == UITableViewCellAccessoryNone)
+    {
+        //It wasn't checked, so we need to check.
+        [selectedCell setAccessoryType:UITableViewCellAccessoryCheckmark];
+        [self.item addTagsObject:tag];
+        //[tagsSet addObject:tag];
+        
+
+    }
+    
+    
     NSLog(@"%@",tag.content);
     
-    self.item.tag = tag;
+  //  self.item.tag = (NSSet *)tagsSet;
+    
     [[[ItemsDataStore sharedStore] managedObjectContext] save:nil];
     
-    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
     
-    [selectedCell setAccessoryType:UITableViewCellAccessoryCheckmark];
-    [self.cellWithCheckmark setAccessoryType:UITableViewCellAccessoryNone];
-    self.cellWithCheckmark = selectedCell;
     
 }
 
@@ -163,9 +186,8 @@
     
     Tag *object = [[self.tagsFetchedResultsController fetchedObjects] objectAtIndex:indexPath.row];
     
-    if(object == self.item.tag)
+    if([self.item.tags containsObject:object])
     {
-        self.cellWithCheckmark = cell;
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
     

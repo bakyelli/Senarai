@@ -1,5 +1,5 @@
 //
-//  Item.m
+//  Item+Helper.h
 //  Senarai
 //
 //  Created by Basar Akyelli on 10/18/13.
@@ -7,15 +7,8 @@
 //
 
 #import "Item.h"
-#import "Tag.h"
 
-
-@implementation Item
-
-@dynamic completed;
-@dynamic content;
-@dynamic order;
-@dynamic timeStamp;
-@dynamic tags;
+@interface Item (Helper)
+-(NSMutableString *)returnTagsForItem;
 
 @end

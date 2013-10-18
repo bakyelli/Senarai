@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D816048B180F2C3100BACB7F /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = D816048A180F2C3100BACB7F /* Item.m */; };
-		D816048E180F2C3100BACB7F /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = D816048D180F2C3100BACB7F /* Tag.m */; };
 		D863D4CD17FDB9DD007A601E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863D4CC17FDB9DD007A601E /* Foundation.framework */; };
 		D863D4CF17FDB9DD007A601E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863D4CE17FDB9DD007A601E /* CoreGraphics.framework */; };
 		D863D4D117FDB9DD007A601E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D863D4D017FDB9DD007A601E /* UIKit.framework */; };
@@ -29,6 +27,13 @@
 		D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */; };
 		F12580A31810770F00962956 /* ListOfTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12580A21810770F00962956 /* ListOfTagsViewController.m */; };
 		F1667DA21810723000DE0663 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1667DA11810723000DE0663 /* TagViewController.m */; };
+		F1E8B1DD1811B414005B743D /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8B1DC1811B414005B743D /* Tag.m */; };
+		F1E8B1E01811B415005B743D /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8B1DF1811B415005B743D /* Item.m */; };
+		F1E8B1E31811BA4E005B743D /* Item+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8B1E21811BA4E005B743D /* Item+Helper.m */; };
+		F1E8B1E81811C00C005B743D /* CancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E41811C00C005B743D /* CancelButton.png */; };
+		F1E8B1E91811C00C005B743D /* CancelButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E51811C00C005B743D /* CancelButton@2x.png */; };
+		F1E8B1EA1811C00C005B743D /* CancelButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E61811C00C005B743D /* CancelButtonPressed.png */; };
+		F1E8B1EB1811C00C005B743D /* CancelButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E71811C00C005B743D /* CancelButtonPressed@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +47,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D8160489180F2C3100BACB7F /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Item.h; path = ../Item.h; sourceTree = "<group>"; };
-		D816048A180F2C3100BACB7F /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Item.m; path = ../Item.m; sourceTree = "<group>"; };
-		D816048C180F2C3100BACB7F /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tag.h; path = ../Tag.h; sourceTree = "<group>"; };
-		D816048D180F2C3100BACB7F /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tag.m; path = ../Tag.m; sourceTree = "<group>"; };
 		D863D4C917FDB9DD007A601E /* Senarai.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Senarai.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D863D4CC17FDB9DD007A601E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D863D4CE17FDB9DD007A601E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +76,16 @@
 		F12580A21810770F00962956 /* ListOfTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfTagsViewController.m; sourceTree = "<group>"; };
 		F1667DA01810723000DE0663 /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
 		F1667DA11810723000DE0663 /* TagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagViewController.m; sourceTree = "<group>"; };
+		F1E8B1DB1811B414005B743D /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		F1E8B1DC1811B414005B743D /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		F1E8B1DE1811B415005B743D /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		F1E8B1DF1811B415005B743D /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		F1E8B1E11811BA4E005B743D /* Item+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+Helper.h"; sourceTree = "<group>"; };
+		F1E8B1E21811BA4E005B743D /* Item+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+Helper.m"; sourceTree = "<group>"; };
+		F1E8B1E41811C00C005B743D /* CancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancelButton.png; sourceTree = "<group>"; };
+		F1E8B1E51811C00C005B743D /* CancelButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CancelButton@2x.png"; sourceTree = "<group>"; };
+		F1E8B1E61811C00C005B743D /* CancelButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancelButtonPressed.png; sourceTree = "<group>"; };
+		F1E8B1E71811C00C005B743D /* CancelButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CancelButtonPressed@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,10 +116,6 @@
 		D8160488180F020100BACB7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D816048C180F2C3100BACB7F /* Tag.h */,
-				D816048D180F2C3100BACB7F /* Tag.m */,
-				D8160489180F2C3100BACB7F /* Item.h */,
-				D816048A180F2C3100BACB7F /* Item.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -116,6 +123,16 @@
 		D863D4C017FDB9DD007A601E = {
 			isa = PBXGroup;
 			children = (
+				F1E8B1E41811C00C005B743D /* CancelButton.png */,
+				F1E8B1E51811C00C005B743D /* CancelButton@2x.png */,
+				F1E8B1E61811C00C005B743D /* CancelButtonPressed.png */,
+				F1E8B1E71811C00C005B743D /* CancelButtonPressed@2x.png */,
+				F1E8B1DE1811B415005B743D /* Item.h */,
+				F1E8B1DF1811B415005B743D /* Item.m */,
+				F1E8B1DB1811B414005B743D /* Tag.h */,
+				F1E8B1E11811BA4E005B743D /* Item+Helper.h */,
+				F1E8B1E21811BA4E005B743D /* Item+Helper.m */,
+				F1E8B1DC1811B414005B743D /* Tag.m */,
 				D863D4D217FDB9DD007A601E /* Senarai */,
 				D863D4F117FDB9DE007A601E /* SenaraiTests */,
 				D863D4CB17FDB9DD007A601E /* Frameworks */,
@@ -274,7 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D863D4E517FDB9DD007A601E /* Images.xcassets in Resources */,
+				F1E8B1E91811C00C005B743D /* CancelButton@2x.png in Resources */,
+				F1E8B1E81811C00C005B743D /* CancelButton.png in Resources */,
 				D863D4D717FDB9DD007A601E /* InfoPlist.strings in Resources */,
+				F1E8B1EA1811C00C005B743D /* CancelButtonPressed.png in Resources */,
+				F1E8B1EB1811C00C005B743D /* CancelButtonPressed@2x.png in Resources */,
 				D863D4E017FDB9DD007A601E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -294,15 +315,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1E8B1E01811B415005B743D /* Item.m in Sources */,
+				F1E8B1DD1811B414005B743D /* Tag.m in Sources */,
 				D863D4E317FDB9DD007A601E /* ViewController.m in Sources */,
 				D863D4DD17FDB9DD007A601E /* AppDelegate.m in Sources */,
 				D863D4D917FDB9DD007A601E /* main.m in Sources */,
 				F1667DA21810723000DE0663 /* TagViewController.m in Sources */,
+				F1E8B1E31811BA4E005B743D /* Item+Helper.m in Sources */,
 				F12580A31810770F00962956 /* ListOfTagsViewController.m in Sources */,
 				D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */,
-				D816048E180F2C3100BACB7F /* Tag.m in Sources */,
 				D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */,
-				D816048B180F2C3100BACB7F /* Item.m in Sources */,
 				D863D50317FDED1D007A601E /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
-
+@interface ViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
+{
+    UITextField *insertTextField;
+    UIButton *cancelButton;
+    
+    
+}
 - (void) addButtonPressed:(id) sender;
 
 @end

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
-#import "Item.h"
+#import "Item+Helper.h"
 #import "ItemsDataStore.h"
 #import "Tag.h"
 
@@ -22,6 +22,19 @@
 
 
 
+- (void)showNavigatonBarButtons
+{
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                  target:self
+                                  action:@selector(addButtonPressed:)];
+    
+    
+    self.navigationItem.rightBarButtonItem = addButton;
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self.navigationItem.titleView setHidden:NO];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -29,16 +42,10 @@
     self.tableView.dataSource = self;
     
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                  target:self
-                                  action:@selector(addButtonPressed:)];
-    
-    
-    self.navigationItem.rightBarButtonItem = addButton;
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    [self showNavigatonBarButtons];
     
     [ItemsDataStore sharedStore].tableView = self.tableView;
+    
 //    Tag *newTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:[ItemsDataStore sharedStore].managedObjectContext];
 //    
 //    newTag.content = @"myTag!";
@@ -51,12 +58,57 @@
 }
 
 - (void) addButtonPressed:(id)sender {
-    ItemsDataStore *myStore = [ItemsDataStore sharedStore];
-   
-    Item *newItem = [myStore newItem];
-    newItem.content = @"Helloasdf";
+
     
-    [myStore insertItem:newItem];
+    //Make text field
+    CGRect textFieldFrame = CGRectMake(-235.0, 7.0, 230.0, 30.0f);
+    insertTextField = [[UITextField alloc]initWithFrame:textFieldFrame];
+    
+    
+    //Format Text field
+    insertTextField.placeholder = @"Enter text!";
+    insertTextField.backgroundColor = [UIColor whiteColor];
+    insertTextField.textColor = [UIColor blackColor];
+    insertTextField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    insertTextField.borderStyle = UITextBorderStyleRoundedRect;
+    insertTextField.clearButtonMode = UITextFieldViewModeWhileEditing;
+    insertTextField.delegate = self;
+    insertTextField.returnKeyType = UIReturnKeyGo;
+    
+    //Make cancel button
+    cancelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    cancelButton.frame = CGRectMake(330, 8.0, 70, 30);
+    [cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+    
+    //Do something on tap:
+    [cancelButton addTarget:self action:@selector(cancelButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    //Adding background image
+    UIImage *buttonImage = [[UIImage imageNamed:@"CancelButton.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+    
+    UIImage *buttonImagePressed = [[UIImage imageNamed:@"CancelButtonPressed.png"] stretchableImageWithLeftCapWidth:5.0 topCapHeight:0.0];
+    
+    [cancelButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [cancelButton setBackgroundImage:buttonImagePressed forState:UIControlStateHighlighted];
+    
+    //Add Cancel button
+    self.navigationItem.leftBarButtonItem = nil;
+    [self.navigationController.navigationBar addSubview:cancelButton];
+    
+    //Add Insert Text Field
+    self.navigationItem.rightBarButtonItem = nil;
+    [self.navigationItem.titleView setHidden:YES];
+    [self.navigationController.navigationBar addSubview:insertTextField];
+    
+    [UIView animateWithDuration:0.25 animations:^{
+        cancelButton.frame = CGRectMake(243, 8.0, 70, 30);
+        insertTextField.frame = CGRectMake(5.0, 7.0, 230.0, 30.0f);
+    }];
+    
+    [insertTextField becomeFirstResponder];
+    
+    
+    
     
 }
 
@@ -106,7 +158,8 @@
     Item *object = [[ItemsDataStore sharedStore] itemAtIndexPath:indexPath];
     
     cell.textLabel.text = object.content;
-    cell.detailTextLabel.text = object.tag.content;
+
+    cell.detailTextLabel.text = [object returnTagsForItem];
     return cell;
 }
 
@@ -119,6 +172,35 @@
         DetailViewController *dvc = segue.destinationViewController;
         dvc.detailItem = selectedItem;
     }
+}
+-(void)cancelButtonPressed:(id)sender
+{
+    [insertTextField endEditing:YES];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [UIView animateWithDuration:0.25 animations:^
+     {
+         cancelButton.frame = CGRectMake(330, 8.0, 70, 30);
+         textField.frame = CGRectMake(-235.0, 7.0, 230.0, 30.0f);
+     }completion:^(BOOL finished)
+     {
+         [textField removeFromSuperview];
+         [cancelButton removeFromSuperview];
+         
+     }];
+    [self showNavigatonBarButtons];
+    
+    
+}
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    ItemsDataStore *myStore = [ItemsDataStore sharedStore];
+    Item *newItem = [myStore newItem];
+    newItem.content = textField.text;
+    [textField endEditing:YES];
+    return YES;
 }
 
 

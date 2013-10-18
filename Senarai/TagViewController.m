@@ -9,6 +9,7 @@
 #import "TagViewController.h"
 #import "ListOfTagsViewController.h"
 #import "ItemsDataStore.h"
+#import "Item+Helper.h"
 
 @interface TagViewController ()
 
@@ -41,14 +42,14 @@
     NSLog(@"what the");
     [super viewWillAppear:animated];
     [self.tableView reloadData];
-    if(self.tagName == nil)
+    if([self.item.tags count] == 0)
     {
         [self.myCell.detailTextLabel setText:@"[No Tags]"];
         
     }
     else
     {
-        [self.myCell.detailTextLabel setText:self.item.tag.content];
+        [self.myCell.detailTextLabel setText:[self.item returnTagsForItem]];
         
     }
 

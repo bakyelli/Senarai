@@ -7,7 +7,7 @@
 //
 
 #import "ItemsDataStore.h"
-#import "Item.h"
+#import "Item+Helper.h"
 
 @implementation ItemsDataStore
 @synthesize managedObjectContext = _managedObjectContext;
@@ -83,6 +83,8 @@
 }
 
 #pragma mark - Data Store API Methods
+
+
 
 - (Item *)newItem {
     Item *itemToReturn = [NSEntityDescription insertNewObjectForEntityForName:@"Item" inManagedObjectContext:[self managedObjectContext]];

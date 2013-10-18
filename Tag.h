@@ -2,7 +2,7 @@
 //  Tag.h
 //  Senarai
 //
-//  Created by Joe Burgess on 10/16/13.
+//  Created by Basar Akyelli on 10/18/13.
 //  Copyright (c) 2013 Joe Burgess. All rights reserved.
 //
 

@@ -34,5 +34,4 @@
 - (void) deleteItemAtIndexPath: (NSIndexPath *)indexPath;
 - (NSInteger) numberOfItemsForSection:(NSInteger)section;
 - (Item *)itemAtIndexPath:(NSIndexPath *)indexPath;
-
 @end

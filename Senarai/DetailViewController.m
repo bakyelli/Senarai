@@ -55,7 +55,6 @@
     if ([[segue identifier] isEqualToString:@"tagSegue"]) {
 
         TagViewController *dvc = segue.destinationViewController;
-        dvc.tagName = self.detailItem.tag.content;
         dvc.item = self.detailItem;
     
     }
