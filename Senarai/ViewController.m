@@ -11,6 +11,7 @@
 #import "Item+Helper.h"
 #import "ItemsDataStore.h"
 #import "Tag.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 @interface ViewController ()
 
@@ -100,12 +101,18 @@
     [self.navigationItem.titleView setHidden:YES];
     [self.navigationController.navigationBar addSubview:insertTextField];
     
-    [UIView animateWithDuration:0.25 animations:^{
+    [UIView animateWithDuration:0.6 animations:^{
         cancelButton.frame = CGRectMake(243, 8.0, 70, 30);
         insertTextField.frame = CGRectMake(5.0, 7.0, 230.0, 30.0f);
     }];
     
     [insertTextField becomeFirstResponder];
+    
+//    NSString *soundPath = [[NSBundle mainBundle] pathForResource:@"changeTrack" ofType:@"aif"];
+//    SystemSoundID soundID;
+//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath: soundPath], &soundID);
+//    AudioServicesPlaySystemSound (soundID);
+    
     
     
     
@@ -160,6 +167,7 @@
     cell.textLabel.text = object.content;
 
     cell.detailTextLabel.text = [object returnTagsForItem];
+    [cell.detailTextLabel setFont:[UIFont fontWithName:@"Helvetica" size:10]];
     return cell;
 }
 
@@ -180,7 +188,7 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
-    [UIView animateWithDuration:0.25 animations:^
+    [UIView animateWithDuration:0.6 animations:^
      {
          cancelButton.frame = CGRectMake(330, 8.0, 70, 30);
          textField.frame = CGRectMake(-235.0, 7.0, 230.0, 30.0f);

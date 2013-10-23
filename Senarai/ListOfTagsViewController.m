@@ -8,6 +8,8 @@
 
 #import "ListOfTagsViewController.h"
 #import "ItemsDataStore.h"
+#import "PieChart.h"
+
 @interface ListOfTagsViewController ()
 @end
 
@@ -32,9 +34,22 @@
                                   action:@selector(addButtonPressed:)];
     
     
-    self.navigationItem.rightBarButtonItem = addButton;
+    UIBarButtonItem *tagsChartButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(tagsChartButtonPressed:)];
+    
+    self.navigationItem.rightBarButtonItems = @[addButton, tagsChartButton];
+    
+    
 
     self.tableView.delegate = self;
+}
+
+-(void) tagsChartButtonPressed:(id)sender
+{
+    NSArray *allTags = [self.tagsFetchedResultsController fetchedObjects];
+    PieChart *p = [[PieChart alloc]init];
+    p.allTags = allTags;
+    
+    [self.navigationController pushViewController:p animated:YES];
 }
 
 - (void) addButtonPressed:(id)sender {

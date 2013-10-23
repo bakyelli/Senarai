@@ -1,0 +1,10 @@
+PODS:
+  - XYPieChart (0.2)
+
+DEPENDENCIES:
+  - XYPieChart
+
+SPEC CHECKSUMS:
+  XYPieChart: 17fa4ce063f09cf60716ff6974cfb5930bdc6afd
+
+COCOAPODS: 0.26.2

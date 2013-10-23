@@ -50,8 +50,11 @@
     else
     {
         [self.myCell.detailTextLabel setText:[self.item returnTagsForItem]];
+
         
     }
+    [self.myCell.detailTextLabel setFont:[UIFont fontWithName:@"Helvetica" size:10]];
+    
 
 }
 
