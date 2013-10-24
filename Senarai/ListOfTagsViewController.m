@@ -103,6 +103,7 @@
         //It wasn't checked, so we need to check.
         [selectedCell setAccessoryType:UITableViewCellAccessoryCheckmark];
         [self.item addTagsObject:tag];
+        
         //[tagsSet addObject:tag];
         
 
@@ -111,8 +112,13 @@
     
     NSLog(@"%@",tag.content);
     
-  //  self.item.tag = (NSSet *)tagsSet;
-    
+    if([self.item.tags count]> 0)
+    {
+        self.item.hastags = [NSNumber numberWithBool:YES];
+    }
+    else{
+        self.item.hastags = [NSNumber numberWithBool:NO];
+    }
     [[[ItemsDataStore sharedStore] managedObjectContext] save:nil];
     
     
@@ -182,9 +188,7 @@
 }
 
 
-
 #pragma mark - Table view data source
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {

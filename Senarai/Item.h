@@ -2,7 +2,7 @@
 //  Item.h
 //  Senarai
 //
-//  Created by Basar Akyelli on 10/18/13.
+//  Created by Basar Akyelli on 10/24/13.
 //  Copyright (c) 2013 Joe Burgess. All rights reserved.
 //
 
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSString * content;
 @property (nonatomic, retain) NSNumber * order;
 @property (nonatomic, retain) NSDate * timeStamp;
+@property (nonatomic, retain) NSNumber * hastags;
 @property (nonatomic, retain) NSSet *tags;
 @end
 

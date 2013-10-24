@@ -41,7 +41,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.tableView.dataSource = self;
-    
 
     [self showNavigatonBarButtons];
     
@@ -56,6 +55,8 @@
 //    firstItem.tag = newTag;
     
     NSLog(@"I Loaded");
+    
+    
 }
 
 - (void) addButtonPressed:(id)sender {
@@ -135,6 +136,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
+    //return [[ItemsDataStore sharedStore] numberOfItemsForSection:section];
     return [[ItemsDataStore sharedStore] numberOfItemsForSection:section];
     
 }
@@ -160,14 +162,17 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     
-    Item *object = [[ItemsDataStore sharedStore] itemAtIndexPath:indexPath];
+    Item *object = [[[ItemsDataStore sharedStore] fetchedResultsController] objectAtIndexPath:indexPath];
     
     cell.textLabel.text = object.content;
 
     cell.detailTextLabel.text = [object returnTagsForItem];
     [cell.detailTextLabel setFont:[UIFont fontWithName:@"Helvetica" size:10]];
+    
+    NSLog(@"Has Tags: %@", object.hastags);
     return cell;
 }
 
@@ -176,7 +181,7 @@
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
        
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        Item *selectedItem = [[ItemsDataStore sharedStore] itemAtIndexPath:indexPath];
+        Item *selectedItem = [[[ItemsDataStore sharedStore] fetchedResultsController] objectAtIndexPath:indexPath];
         DetailViewController *dvc = segue.destinationViewController;
         dvc.detailItem = selectedItem;
     }
@@ -207,9 +212,38 @@
     ItemsDataStore *myStore = [ItemsDataStore sharedStore];
     Item *newItem = [myStore newItem];
     newItem.content = textField.text;
+    
+    [myStore insertItem:newItem];
+
     [textField endEditing:YES];
-    return YES;
+    
+       return YES;
 }
 
 
+- (IBAction)segmentedControlChanged:(id)sender {
+    
+    NSLog(@"Selected: %i", [self.segmentedControl selectedSegmentIndex]);
+    NSInteger selectedIndex = [self.segmentedControl selectedSegmentIndex];
+    
+    NSPredicate *predicate;
+    
+    if(selectedIndex == 0) // All
+    {
+    }
+    else if(selectedIndex == 1) // With Tags
+    {
+        predicate = [NSPredicate predicateWithFormat:@"hastags > 0"];
+    }
+    else if (selectedIndex == 2) // No tags
+        
+    {
+        predicate = [NSPredicate predicateWithFormat:@"hastags = 0"];
+
+    }
+    
+    [[ItemsDataStore sharedStore] updateFetchedResultsController:predicate];
+    [self.tableView reloadData];
+    
+}
 @end

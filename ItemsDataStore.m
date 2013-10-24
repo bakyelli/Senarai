@@ -36,10 +36,20 @@
     }
  
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [NSFetchedResultsController deleteCacheWithName:@"Item"];
+    
+    
+    
+//    if(self.myPredicate != nil)
+//    {
+//    }
+    
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
     
-    [fetchRequest setEntity:entity];
+//    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"hastags > 0"];
+//    [fetchRequest setPredicate:predicate];
     
+    [fetchRequest setEntity:entity];
     [fetchRequest setFetchBatchSize:20];
     
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:NO];
@@ -63,6 +73,35 @@
     
 }
 
+-(void)updateFetchedResultsController:(NSPredicate *)predicate
+{
+       NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    [NSFetchedResultsController deleteCacheWithName:@"Item"];
+    
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Item" inManagedObjectContext:self.managedObjectContext];
+  
+    [fetchRequest setPredicate:predicate];
+    
+    [fetchRequest setEntity:entity];
+    [fetchRequest setFetchBatchSize:20];
+    
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"order" ascending:NO];
+    
+    [fetchRequest setSortDescriptors:@[sortDescriptor]];
+    
+    
+    NSFetchedResultsController *myFetchedResultsController =
+    [[NSFetchedResultsController alloc]
+     initWithFetchRequest:fetchRequest
+     managedObjectContext:self.managedObjectContext
+     sectionNameKeyPath:nil
+     cacheName:@"Item"];
+    
+    myFetchedResultsController.delegate=self;
+    _fetchedResultsController = myFetchedResultsController;
+    
+    [_fetchedResultsController performFetch:nil];
+}
 - (void) controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
@@ -105,6 +144,14 @@
 }
 
 - (void)insertItem:(Item *)insertItem {
+    if([insertItem.tags count] >0)
+    {
+        insertItem.hastags = [NSNumber numberWithInt:1];
+    }
+    else
+    {
+        insertItem.hastags = [NSNumber numberWithInt:0];
+    }
     [self.managedObjectContext insertObject:insertItem];
     [self.managedObjectContext save:nil];
 }

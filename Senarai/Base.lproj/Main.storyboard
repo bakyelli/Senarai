@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xnL-Tx-5cq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A2093" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="xnL-Tx-5cq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
     </dependencies>
     <scenes>
         <!--View Controller - Items-->
@@ -12,6 +12,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <segmentedControl key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="nXN-JG-IWS">
+                            <rect key="frame" x="0.0" y="130" width="320" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="All"/>
+                                <segment title="With Tags"/>
+                                <segment title="No Tags"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedControlChanged:" destination="KT6-aa-wBp" eventType="valueChanged" id="esz-36-55e"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="basicCell" textLabel="5O4-cf-J9B" detailTextLabel="P9f-ch-azH" style="IBUITableViewCellStyleValue1" id="MOh-eP-Ltp">
                                 <rect key="frame" x="0.0" y="86" width="320" height="44"/>
@@ -43,6 +55,10 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" title="Items" id="A4H-R2-LK6"/>
+                    <connections>
+                        <outlet property="segmentedControl" destination="nXN-JG-IWS" id="Jw3-Fs-ViD"/>
+                        <outlet property="tableView" destination="Gk3-Aa-WFM" id="Coa-mS-tSx"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Yh-p8-Lv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

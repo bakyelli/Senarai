@@ -26,12 +26,12 @@
 		D8F99D3417FF0C0D00F1C8C9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F99D3317FF0C0D00F1C8C9 /* CoreData.framework */; };
 		D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D8F99D3517FF0CCA00F1C8C9 /* Models.xcdatamodeld */; };
 		D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */; };
+		F1219BB11819A09A00D41952 /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F1219BB01819A09A00D41952 /* Item.m */; };
+		F1219BB41819A09A00D41952 /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = F1219BB31819A09A00D41952 /* Tag.m */; };
 		F12580A31810770F00962956 /* ListOfTagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F12580A21810770F00962956 /* ListOfTagsViewController.m */; };
 		F1667DA21810723000DE0663 /* TagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1667DA11810723000DE0663 /* TagViewController.m */; };
 		F1E413AA1816DACA00D49F66 /* PieChart.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1E413A91816DACA00D49F66 /* PieChart.xib */; };
 		F1E413AD1816DB1100D49F66 /* PieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E413AC1816DB1100D49F66 /* PieChart.m */; };
-		F1E8B1DD1811B414005B743D /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8B1DC1811B414005B743D /* Tag.m */; };
-		F1E8B1E01811B415005B743D /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8B1DF1811B415005B743D /* Item.m */; };
 		F1E8B1E31811BA4E005B743D /* Item+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = F1E8B1E21811BA4E005B743D /* Item+Helper.m */; };
 		F1E8B1E81811C00C005B743D /* CancelButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E41811C00C005B743D /* CancelButton.png */; };
 		F1E8B1E91811C00C005B743D /* CancelButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E51811C00C005B743D /* CancelButton@2x.png */; };
@@ -77,6 +77,10 @@
 		D8F99DCC1802F33100F1C8C9 /* ItemsDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemsDataStore.h; path = ../ItemsDataStore.h; sourceTree = "<group>"; };
 		D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ItemsDataStore.m; path = ../ItemsDataStore.m; sourceTree = "<group>"; };
 		E1AE2D4C95264A83B6288CA5 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1219BAF1819A09A00D41952 /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		F1219BB01819A09A00D41952 /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
+		F1219BB21819A09A00D41952 /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
+		F1219BB31819A09A00D41952 /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		F12580A11810770F00962956 /* ListOfTagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfTagsViewController.h; sourceTree = "<group>"; };
 		F12580A21810770F00962956 /* ListOfTagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfTagsViewController.m; sourceTree = "<group>"; };
 		F1667DA01810723000DE0663 /* TagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagViewController.h; sourceTree = "<group>"; };
@@ -84,10 +88,6 @@
 		F1E413A91816DACA00D49F66 /* PieChart.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PieChart.xib; sourceTree = "<group>"; };
 		F1E413AB1816DB1100D49F66 /* PieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChart.h; sourceTree = "<group>"; };
 		F1E413AC1816DB1100D49F66 /* PieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChart.m; sourceTree = "<group>"; };
-		F1E8B1DB1811B414005B743D /* Tag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
-		F1E8B1DC1811B414005B743D /* Tag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
-		F1E8B1DE1811B415005B743D /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
-		F1E8B1DF1811B415005B743D /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		F1E8B1E11811BA4E005B743D /* Item+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Item+Helper.h"; sourceTree = "<group>"; };
 		F1E8B1E21811BA4E005B743D /* Item+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Item+Helper.m"; sourceTree = "<group>"; };
 		F1E8B1E41811C00C005B743D /* CancelButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancelButton.png; sourceTree = "<group>"; };
@@ -125,6 +125,10 @@
 		D8160488180F020100BACB7F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F1219BB21819A09A00D41952 /* Tag.h */,
+				F1219BB31819A09A00D41952 /* Tag.m */,
+				F1219BAF1819A09A00D41952 /* Item.h */,
+				F1219BB01819A09A00D41952 /* Item.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -139,12 +143,8 @@
 				F1E8B1E51811C00C005B743D /* CancelButton@2x.png */,
 				F1E8B1E61811C00C005B743D /* CancelButtonPressed.png */,
 				F1E8B1E71811C00C005B743D /* CancelButtonPressed@2x.png */,
-				F1E8B1DE1811B415005B743D /* Item.h */,
-				F1E8B1DF1811B415005B743D /* Item.m */,
-				F1E8B1DB1811B414005B743D /* Tag.h */,
 				F1E8B1E11811BA4E005B743D /* Item+Helper.h */,
 				F1E8B1E21811BA4E005B743D /* Item+Helper.m */,
-				F1E8B1DC1811B414005B743D /* Tag.m */,
 				D863D4D217FDB9DD007A601E /* Senarai */,
 				D863D4F117FDB9DE007A601E /* SenaraiTests */,
 				D863D4CB17FDB9DD007A601E /* Frameworks */,
@@ -365,8 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1E8B1E01811B415005B743D /* Item.m in Sources */,
-				F1E8B1DD1811B414005B743D /* Tag.m in Sources */,
+				F1219BB41819A09A00D41952 /* Tag.m in Sources */,
 				D863D4E317FDB9DD007A601E /* ViewController.m in Sources */,
 				D863D4DD17FDB9DD007A601E /* AppDelegate.m in Sources */,
 				D863D4D917FDB9DD007A601E /* main.m in Sources */,
@@ -374,6 +373,7 @@
 				F1667DA21810723000DE0663 /* TagViewController.m in Sources */,
 				F1E8B1E31811BA4E005B743D /* Item+Helper.m in Sources */,
 				F12580A31810770F00962956 /* ListOfTagsViewController.m in Sources */,
+				F1219BB11819A09A00D41952 /* Item.m in Sources */,
 				D8F99DCE1802F33100F1C8C9 /* ItemsDataStore.m in Sources */,
 				D8F99D3717FF0CCA00F1C8C9 /* Models.xcdatamodeld in Sources */,
 				D863D50317FDED1D007A601E /* DetailViewController.m in Sources */,

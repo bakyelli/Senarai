@@ -19,13 +19,17 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+//- (NSFetchedResultsController *)fetchedResultsController;
 
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+-(void)updateFetchedResultsController:(NSPredicate *)predicate;
 
 @property (strong, nonatomic) NSFetchedResultsController *tagsFetchedResultsController;
 @property (strong, nonatomic) UITableView *tableView;
 
 + (ItemsDataStore *)sharedStore;
+
+@property (strong,nonatomic) NSPredicate *myPredicate;
 
 - (Item *)newItem;
 - (Tag *)newTag;
