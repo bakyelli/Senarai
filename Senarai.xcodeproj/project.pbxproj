@@ -37,6 +37,8 @@
 		F1E8B1E91811C00C005B743D /* CancelButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E51811C00C005B743D /* CancelButton@2x.png */; };
 		F1E8B1EA1811C00C005B743D /* CancelButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E61811C00C005B743D /* CancelButtonPressed.png */; };
 		F1E8B1EB1811C00C005B743D /* CancelButtonPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1E8B1E71811C00C005B743D /* CancelButtonPressed@2x.png */; };
+		F1F3D129181EB00300A201B1 /* DrawerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3D127181EB00300A201B1 /* DrawerViewController.m */; };
+		F1F3D12A181EB00300A201B1 /* DrawerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F1F3D128181EB00300A201B1 /* DrawerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,9 @@
 		F1E8B1E51811C00C005B743D /* CancelButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CancelButton@2x.png"; sourceTree = "<group>"; };
 		F1E8B1E61811C00C005B743D /* CancelButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CancelButtonPressed.png; sourceTree = "<group>"; };
 		F1E8B1E71811C00C005B743D /* CancelButtonPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CancelButtonPressed@2x.png"; sourceTree = "<group>"; };
+		F1F3D126181EB00300A201B1 /* DrawerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawerViewController.h; sourceTree = "<group>"; };
+		F1F3D127181EB00300A201B1 /* DrawerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawerViewController.m; sourceTree = "<group>"; };
+		F1F3D128181EB00300A201B1 /* DrawerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DrawerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +188,9 @@
 				D8F99DCD1802F33100F1C8C9 /* ItemsDataStore.m */,
 				D863D4DB17FDB9DD007A601E /* AppDelegate.h */,
 				D863D4DC17FDB9DD007A601E /* AppDelegate.m */,
+				F1F3D126181EB00300A201B1 /* DrawerViewController.h */,
+				F1F3D127181EB00300A201B1 /* DrawerViewController.m */,
+				F1F3D128181EB00300A201B1 /* DrawerViewController.xib */,
 				D863D4DE17FDB9DD007A601E /* Main.storyboard */,
 				F12580A11810770F00962956 /* ListOfTagsViewController.h */,
 				F12580A21810770F00962956 /* ListOfTagsViewController.m */,
@@ -310,6 +318,7 @@
 				F1E8B1E91811C00C005B743D /* CancelButton@2x.png in Resources */,
 				F1E8B1E81811C00C005B743D /* CancelButton.png in Resources */,
 				D863D4D717FDB9DD007A601E /* InfoPlist.strings in Resources */,
+				F1F3D12A181EB00300A201B1 /* DrawerViewController.xib in Resources */,
 				F1E8B1EA1811C00C005B743D /* CancelButtonPressed.png in Resources */,
 				F1E413AA1816DACA00D49F66 /* PieChart.xib in Resources */,
 				F1E8B1EB1811C00C005B743D /* CancelButtonPressed@2x.png in Resources */,
@@ -367,6 +376,7 @@
 			files = (
 				F1219BB41819A09A00D41952 /* Tag.m in Sources */,
 				D863D4E317FDB9DD007A601E /* ViewController.m in Sources */,
+				F1F3D129181EB00300A201B1 /* DrawerViewController.m in Sources */,
 				D863D4DD17FDB9DD007A601E /* AppDelegate.m in Sources */,
 				D863D4D917FDB9DD007A601E /* main.m in Sources */,
 				F1E413AD1816DB1100D49F66 /* PieChart.m in Sources */,

@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MMDrawerController.h>
+#import "Tag.h"
 
 @interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate>
 {
@@ -16,8 +18,14 @@
     
 }
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-- (void) addButtonPressed:(id) sender;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property (strong, nonatomic) MMDrawerController *drawerController;
+@property BOOL showSelectedTagOnly;
+@property (strong, nonatomic) Tag *selectedTag;
+
+
+- (void) filterTableViewForTagSelection:(Tag *) selectedTag;
+- (void) addButtonPressed:(id) sender;
 - (IBAction)segmentedControlChanged:(id)sender;
 
 

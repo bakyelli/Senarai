@@ -66,7 +66,6 @@
     
     myFetchedResultsController.delegate=self;
     _fetchedResultsController = myFetchedResultsController;
-    
     [_fetchedResultsController performFetch:nil];
     
     return _fetchedResultsController;

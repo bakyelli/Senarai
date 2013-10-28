@@ -7,12 +7,39 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
+#import "DrawerViewController.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    
+    ViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"itemsView"];
+    UINavigationController *navController = [[UINavigationController alloc]initWithRootViewController:vc];
+    
+    
+    
+    DrawerViewController *dvc = [[DrawerViewController alloc]init];
+    UINavigationController *leftNavController = [[UINavigationController alloc]initWithRootViewController:dvc];
+    
+    self.drawerController = [[MMDrawerController alloc] initWithCenterViewController:navController leftDrawerViewController:leftNavController];
+    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+    [self.drawerController setMaximumLeftDrawerWidth:260.0];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+
+
+    [self.window setRootViewController:self.drawerController];
     return YES;
 }
 							

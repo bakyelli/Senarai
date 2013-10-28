@@ -12,6 +12,9 @@
 #import "ItemsDataStore.h"
 #import "Tag.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <MMDrawerBarButtonItem.h>
+#import <UIViewController+MMDrawerController.h>
+
 
 @interface ViewController ()
 
@@ -32,8 +35,18 @@
     
     
     self.navigationItem.rightBarButtonItem = addButton;
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+  //  self.navigationItem.leftBarButtonItem = self.editButtonItem;
     [self.navigationItem.titleView setHidden:NO];
+
+    MMDrawerBarButtonItem *drawerButton = [[MMDrawerBarButtonItem alloc] initWithTarget:self action:@selector(openDrawer:)];
+    [self.navigationItem setLeftBarButtonItem:drawerButton];
+    
+}
+- (void)openDrawer:(id)sender
+{
+    
+    MMDrawerController *drawerController = self.mm_drawerController;
+    [drawerController openDrawerSide:MMDrawerSideLeft animated:YES completion:nil];
 }
 
 - (void)viewDidLoad
@@ -41,20 +54,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.tableView.dataSource = self;
-
     [self showNavigatonBarButtons];
-    
     [ItemsDataStore sharedStore].tableView = self.tableView;
     
-//    Tag *newTag = [NSEntityDescription insertNewObjectForEntityForName:@"Tag" inManagedObjectContext:[ItemsDataStore sharedStore].managedObjectContext];
-//    
-//    newTag.content = @"myTag!";
-//   
-//    NSArray *items = [ItemsDataStore sharedStore].fetchedResultsController.fetchedObjects;
-//    Item *firstItem = [items firstObject];
-//    firstItem.tag = newTag;
     
-    NSLog(@"I Loaded");
+    
+    
     
     
 }
@@ -160,17 +165,27 @@
     }
 }
 
+- (void) filterTableViewForTagSelection:(Tag *) selectedTag
+{
+    NSLog(@"Do some filterin'");
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"ANY tags == %@",selectedTag];
+    [[ItemsDataStore sharedStore] updateFetchedResultsController:predicate];
+    [self.tableView reloadData];
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"basicCell" forIndexPath:indexPath];
     
     Item *object = [[[ItemsDataStore sharedStore] fetchedResultsController] objectAtIndexPath:indexPath];
-    
+  
     cell.textLabel.text = object.content;
 
     cell.detailTextLabel.text = [object returnTagsForItem];
     [cell.detailTextLabel setFont:[UIFont fontWithName:@"Helvetica" size:10]];
+
     
     NSLog(@"Has Tags: %@", object.hastags);
     return cell;
